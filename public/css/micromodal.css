@@ -36,7 +36,6 @@
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 600;
-    font-size: 1.25rem;
     line-height: 1.25;
     color: #00449e;
     box-sizing: border-box;
@@ -57,7 +56,6 @@
   }
   
   .modal__btn {
-    font-size: .875rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: .5rem;
