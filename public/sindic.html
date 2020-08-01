@@ -38,13 +38,13 @@
         </div>
         <div class="md-form mb-5">
           <i class="fas fa-user prefix grey-text"></i>
-          <input type="email" id="defaultForm-nom" class="form-control validate">
+          <input type="text" id="defaultForm-nom" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-email">Nom i cognoms</label>
         </div>
 
         <div class="md-form mb-4">
           <i class="fas fa-address-card prefix grey-text"></i>
-          <input type="password" id="defaultForm-dni" class="form-control validate">
+          <input type="text" id="defaultForm-dni" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-pass">DNI</label>
         </div>
 
@@ -73,16 +73,18 @@
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript">
       function generateEmail(){
-        let name = document.getElementById('defaultForm-nom').value
-        let DNI = document.getElementById('defaultForm-dni').value
-        if(name) name = encodeURI(name)
-        if(DNI) name = encodeURI(DNI)
-        window.location.href = "mailto:sindic@sindic.cat?subject=Expedient%200194%2F2019&body=Jo%2C%20"+
-        +name+"%2C%20amb%20DNI%20"+DNI+"%2C%20dono%20el%20meu%20suport%20personal%20a%20l%E2%80%99actuaci%C3%B3%20del%20S%C3%ADndic%20de%20Greuges%20AO%20194%2F2019%20sobre%20%E2%80%9Cl%27actuaci%C3%B3%20de%20les%20administracions%20p%C3%BAbliques%20en%20relaci%C3%B3%20al%20projecte%20de%20reobertura%20de%20l%27antiga%20central%20t%C3%A8rmica%20de%20Cercs%E2%80%9D%2C%20que%20investiga%20els%20possibles%20defectes%20ambientals%20i%20urban%C3%ADstics%20del%20projecte."
+        let name = document.getElementById('defaultForm-nom').value;
+        let DNI = document.getElementById('defaultForm-dni').value;
+        if(name) name = encodeURI(name);
+        if(DNI) name = encodeURI(DNI);
+        const mailtoUrl = "mailto:sindic@sindic.cat?subject=Expedient%200194%2F2019&body=Jo%2C%20"+
+        +name+"%2C%20amb%20DNI%20"+DNI+"%2C%20dono%20el%20meu%20suport%20personal%20a%20l%E2%80%99actuaci%C3%B3%20del%20S%C3%ADndic%20de%20Greuges%20AO%20194%2F2019%20sobre%20%E2%80%9Cl%27actuaci%C3%B3%20de%20les%20administracions%20p%C3%BAbliques%20en%20relaci%C3%B3%20al%20projecte%20de%20reobertura%20de%20l%27antiga%20central%20t%C3%A8rmica%20de%20Cercs%E2%80%9D%2C%20que%20investiga%20els%20possibles%20defectes%20ambientals%20i%20urban%C3%ADstics%20del%20projecte.";
+        alert(mailtoUrl)
+        window.location.href = mailtoUrl;
       }
       $(function() {
           $("#openForm1").click();
-          $("#openForm1").click(function(){
+          $("#generate").click(function(){
             generateEmail();
           });
       });
