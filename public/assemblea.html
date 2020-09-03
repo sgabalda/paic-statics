@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Campanya d'adhesió al síndic</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+      
+  <div class="modal fade" id="modalLoginForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Campanya d'adhesió al síndic</h4>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="mb-5">
+          <p>
+            Inscriu-te a l'assemblea del proper 5 de setembre de 2020 de la Plataforma Anti-Incineradora de Cercs.<br/>
+            Per garantir les mesures anti-COVID, necessitem que t'inscriguis i ens deixis unes dades de contacte. D'aquesta manera
+            podem controlar l'aforament i alhora contactar-te si després de l'assemblea algú dóna positiu, per a que puguis prendre les 
+            precaucions necessàries.
+          </p>
+          <ol>
+            <li>Omple amb el teu nom i cognoms i el teu telèfon (<strong>no guardem cap dada</strong>, només t'ajudem a generar el correu)</li>
+            <li>Clica a "Generar email" i s'obrirà l'aplicació de correu que tinguis configurada, i podràs enviar el correu. Un cop enviat ja t'hauràs inscrit</li>
+          </ol>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="defaultForm-nom" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-nom">Nom i cognoms</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-address-card prefix grey-text"></i>
+          <input type="text" id="defaultForm-telf" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-telf">Telèfon</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default" id="generate">Generar email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" style='display:none'>
+  <a id="openForm0" href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm0">Launch
+    Modal Login Form 0</a>
+  <a id="openForm1" href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm1">Launch
+    Modal Login Form 1</a>
+</div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript">
+      
+      $(function() {
+        function generateEmail(){
+          var name = $("#defaultForm-nom").val()+"";
+          var telf = $("#defaultForm-telf").val()+"";
+          if(name) name = encodeURI(name);
+          if(telf) telf = encodeURI(telf);
+          const mailtoUrl = "mailto:plataformaantiincineradora@gmail.com?subject=Inscripci%C3%B3%20Assemblea%20Setembre%202020%2C%20"+
+          name+"&body=Jo%2C%20"+name+"%2C%20assistir%C3%A9%20a%20l%27assemblea%20del%20proper%20dissabte"+
+          "%205%20de%20setembre%20al%20Konvent%20de%20Cal%20Rosal.%0AEl%20meu%20tel%C3%A8fon%20%C3%A9s%20"+telf+".";
+          //alert(mailtoUrl)
+          window.location.href = mailtoUrl;
+        }
+        $("#generate").click(function(){
+          generateEmail();
+        });
+        $("#openForm1").click();
+      });
+    </script>
+  </body>
+</html>
