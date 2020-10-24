@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Consell Comarcal del Berguedà: Jesús Calderer no pot ser Conseller de Medi Natural </title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
+      
+  <div class="modal fade" id="modalLoginForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Consell Comarcal del Berguedà: Jesús Calderer no pot ser Conseller de Medi Natural</h4>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="mb-5">
+          <p>
+            El Consell Comarcal vota el dimecres 28/10/2020 una moció per cessar Jesús Calderer com a Conseller de Medi Natural, alcalde de Cercs i <strong>principal promotor 
+            del projecte de la incineradora</strong>. En dos senzills passos envia un correu al President del Consell Comarcal per demanar que doni suport a la moció!
+            Opcionalment, envia còpia a algun altre conseller del govern
+          </p>
+          <ol>
+            <li>Omple amb el teu nom i cognoms, la teva població (si tens residència o estiueges al berguedà, posa la població a la que estas vinculat)
+              i el teu DNI (<strong>no guardem cap dada</strong>, és el teu dispositiu qui fa tota la feina ;-)</li>
+            <li>Si vols enviar còpia a algun altre membre del consell, tria'l del desplegable</li>
+            <li>Clica a "Generar email" i s'obrirà l'aplicació de correu que tinguis configurada, i podràs enviar el correu 
+              (o modificar-lo si ho consideres adient)</li>
+          </ol>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="defaultForm-nom" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-nom">Nom i cognoms</label>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-address-card prefix grey-text"></i>
+          <input type="text" id="defaultForm-dni" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-dni">DNI</label>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-address-card prefix grey-text"></i>
+          <input type="text" id="defaultForm-poblacio" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-poblacio">Població</label>
+        </div>
+        <div class="md-form mb-4">
+          <i class="fas fa-address-card prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-membre">Tria a quin altre conseller del govern li vols enviar el correu</label><br/><br/>
+          <select id="defaultForm-membre" class="form-control validate">
+            <option value="">No vull enviar-la a cap altre membre</option>
+            <option value="pcanal@ccbergueda.cat">Patrocini Canal (AGRUPACIÓ D'ELECTORS DEL BERGUEDÀ – Avià)</option>
+            <option value="jsabata@ccbergueda.cat">Jordi Sabata (JUNTS – Berga)</option>
+            <option value="llvall@ccbergueda.cat">Lluís Vall (JUNTS – Gironella)</option>
+            <option value="agarcia@ccbergueda.cat">Abel Garcia (CANDIDATURA DE PROGRÉS – Berga)</option>
+            <option value="aserra@ccbergueda.cat">Anna Maria Serra (JUNTS – L’Espunyola)</option>
+            <option value="jsabata@ccbergueda.cat2">Araceli Esquerra (JUNTS – Puig-reig)</option>
+            <option value="jsabata@ccbergueda.cat2">Vicenç Linares (JUNTS – La Pobla de Lillet)</option>
+            <option value="jsabata@ccbergueda.cat2">Pep Llamas (BAGÀ ENDAVANT – Bagà)</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default" id="generate">Generar email</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center" style='display:none'>
+  <a id="openForm0" href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm0">Launch
+    Modal Login Form 0</a>
+  <a id="openForm1" href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm1">Launch
+    Modal Login Form 1</a>
+</div>
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript">
+      
+      $(function() {
+        function generateEmail(){
+          var name = $("#defaultForm-nom").val()+"";
+          var DNI = $("#defaultForm-dni").val()+"";
+          var poblacio = $("#defaultForm-poblacio").val()+"";
+          var membre = $("#defaultForm-membre").val()+"";
+          if(name) name = encodeURI(name);
+          if(DNI) DNI = encodeURI(DNI);
+          if(poblacio) poblacio = encodeURI(poblacio);
+          if(membre) {
+            membre = "cc="+encodeURI(membre)+"&";
+          }else{
+            membre = ""
+          }
+          const mailtoUrl = "mailto:sindic@sindic.cat?"+membre+"subject=Jes%C3%BAs%20Calderer%20no%20pot%20ser%20Conseller"+
+          "%20de%20Medi%20Natural"+
+          "&body=Excm.%20Sr.%20Josep%20Lara%2C%0A%0AJo%20"+name+"%2C%20amb%20DNI%20"+DNI+"%2C%20com%20a%20ve%C3%AD%2Fna%20"+
+          "de%20"+poblacio+"%2C%20em%20poso%20en%20contacte%20amb%20vost%C3%A8%20per%20fer-li%20una%20"+
+          "petici%C3%B3%20concreta.%0A%0AFa%20ja%20m%C3%A9s%20d%E2%80%99un%20any%20que%20els%20berguedans"+
+          "%20i%20berguedanes%20lluitem%20contra%20la%20implantaci%C3%B3%20d%E2%80%99una%20incineradora%"+
+          "20que%20ser%C3%A0%20sens%20dubte%20perjudicial%20social%2C%20econ%C3%B2mica%20i%20ambientalment."+
+          "%0A%0A30%20municipis%20de%20la%20nostra%20comarca%20han%20refusat%20de%20pla%20aquesta%20incineradora"+
+          "%2C%20el%20ple%20del%20Consell%20comarcal%20del%20Bergued%C3%A0%20i%20el%20consell%20d%E2%80%99alcaldes"+
+          "%20va%20votar%20en%20contra%20de%20la%20incineradora%20i%20fins%20i%20tot%20des%20d%E2%80%99estaments"+
+          "%20supracomarcals.%0A%0AEls%20representants%20pol%C3%ADtics%20tenen%20l%E2%80%99obligaci%C3%B3%20i%20el"+
+          "%20deure%20de%20respectar%20els%20desitjos%20de%20la%20ciutadania%20i%20actuar%20en%20l%E2%80%99inter"+
+          "%C3%A8s%20general%20de%20la%20mateixa%3B%20de%20fet%2C%20hauria%20de%20ser%20aquesta%20%C3%BAltima"+
+          "%20obligaci%C3%B3%20la%20seva%20m%C3%A0xima%20i%20%C3%BAnica%20prioritat%20i%20%C3%A9s%20ben%20clar"+
+          "%20que%20ning%C3%BA%20va%20poder%20votar%20cap%20incineradora%2C%20ni%20al%20propi%20municipi%20de"+
+          "%20Cercs%20ni%20a%20la%20resta%20de%20la%20comarca.%0A%0AAix%C3%AD%2C%20tenint%20en%20compte%20els"+
+          "%20fets%20anteriorment%20mencionats%20no%20entenem%20com%20pot%20ser%20que%20el%20pol%C3%ADtic%20que"+
+          "%2C%20unilateralment%2C%20ha%20estat%20promovent%20aquest%20atemptat%20al%20b%C3%A9%20col%C2%B7lectiu"+
+          "%20encara%20continu%C3%AF%20formant%20part%20d%E2%80%99un%20%C3%B2rgan%20representatiu%20que%20ha"+
+          "%20de%20defensar%20l%E2%80%99inter%C3%A8s%20com%C3%BA%2C%20aquest%20fet%20no%20nom%C3%A9s%20sorpr"+
+          "%C3%A8n%20pel%20posicionament%20contrari%20del%20propi%20consell%20comarcal%2C%20expressat%20al"+
+          "%20plenari%20del%20mateix%2C%20sin%C3%B3%20per%20la%20deslegitimaci%C3%B3%20a%20la%20que%20sotmet"+
+          "%20la%20instituci%C3%B3%20que%20els%20consellers%20i%20les%20conselleres%20representen%2C%20"+
+          "deslegitimaci%C3%B3%20que%20condueix%20inevitablement%20a%20una%20incapacitat%20per%20a%20la%20resoluci"+
+          "%C3%B3%20dels%20problemes%2C%20com%20la%20incineradora%2C%20que%20afecten%20aquesta%20comarca%2C%20de%20"+
+          "forma%20conjunta%2C%20pactada%20i%20pac%C3%ADfica.%0A%0ATot%20i%20les%20declaracions%20d%E2%80%99"+
+          "imparcialitat%20del%20Sr%20alcalde%2C%20Jes%C3%BAs%20Calderer%2C%20envers%20el%20projecte%20de%20la"+
+          "%20incineradora%20a%20Cercs%2C%20s%E2%80%99ha%20fet%20evident%20que%20s%C3%B3n%20totalment"+
+          "%20falses%20amb%3A%0A-La%20seva%20inactivitat%20envers%20les%20responsabilitats%20de%20fer%20complir"+
+          "%20el%20dictamen%20d%E2%80%99aturar%20les%20obres%20irregulars%20que%20es%20duen%20a%20terme%20encara"+
+          "%20ara%20%28segona%20quinzena%20d%E2%80%99octubre%29%20a%20la%20central%20t%C3%A8rmica%2C%20i%0A-La"+
+          "%20irregular%20concessi%C3%B3%20de%20llic%C3%A8ncies%20admetent%20escriptures%20de%20propietat%"+
+          "20incompletes%20.%0A%0APer%20aquestes%20raons%20em%20dirigeixo%20a%20vost%C3%A8%20per%20demanar%"+
+          "20el%20cessament%20del%20Sr%20Jes%C3%BAs%20Calderer%20com%20a%20conseller"+
+          "%20de%20medi%20natural%20al%20Consell%20Comarcal%20del%20Bergued%C3%A0.%0A%0AAtentament%2C%20"+name+"%0A"
+         //alert(mailtoUrl)
+          window.location.href = mailtoUrl;
+        }
+        $("#generate").click(function(){
+          generateEmail();
+        });
+        $("#openForm1").click();
+      });
+    </script>
+  </body>
+</html>
