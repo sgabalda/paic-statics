@@ -48,11 +48,6 @@
         </div>
         <div class="md-form mb-4">
           <i class="fas fa-address-card prefix grey-text"></i>
-          <input type="text" id="defaultForm-dni" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-dni">DNI</label>
-        </div>
-        <div class="md-form mb-4">
-          <i class="fas fa-address-card prefix grey-text"></i>
           <input type="text" id="defaultForm-poblacio" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-poblacio">Població</label>
         </div>
@@ -99,11 +94,9 @@
       $(function() {
         function generateEmail(){
           var name = $("#defaultForm-nom").val()+"";
-          var DNI = $("#defaultForm-dni").val()+"";
           var poblacio = $("#defaultForm-poblacio").val()+"";
           var membre = $("#defaultForm-membre").val()+"";
           if(name) name = encodeURI(name);
-          if(DNI) DNI = encodeURI(DNI);
           if(poblacio) poblacio = encodeURI(poblacio);
           if(membre) {
             membre = "cc="+encodeURI(membre)+"&";
@@ -112,7 +105,7 @@
           }
           const mailtoUrl = "mailto:jlara@ccbergueda.cat?"+membre+"subject=Jes%C3%BAs%20Calderer%20no%20pot%20ser%20Conseller"+
           "%20de%20Medi%20Natural"+
-          "&body=Excm.%20Sr.%20Josep%20Lara%2C%0A%0AJo%20"+name+"%2C%20amb%20DNI%20"+DNI+"%2C%20com%20a%20ve%C3%AD%2Fna%20"+
+          "&body=Excm.%20Sr.%20Josep%20Lara%2C%0A%0AJo%20"+name+"%2C%20com%20a%20ve%C3%AD%2Fna%20"+
           "de%20"+poblacio+"%2C%20em%20poso%20en%20contacte%20amb%20vost%C3%A8%20per%20fer-li%20una%20"+
           "petici%C3%B3%20concreta.%0A%0AFa%20ja%20m%C3%A9s%20d%E2%80%99un%20any%20que%20els%20berguedans"+
           "%20i%20berguedanes%20lluitem%20contra%20la%20implantaci%C3%B3%20d%E2%80%99una%20incineradora%"+
