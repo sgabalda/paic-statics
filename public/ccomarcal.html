@@ -30,12 +30,12 @@
         <div class="mb-5">
           <p>
             El Consell Comarcal vota el dimecres 28/10/2020 una moció per cessar Jesús Calderer com a Conseller de Medi Natural, alcalde de Cercs i <strong>principal promotor 
-            del projecte de la incineradora</strong>. En dos senzills passos envia un correu al President del Consell Comarcal per demanar que doni suport a la moció!
-            Opcionalment, envia còpia a algun altre conseller del govern
+            del projecte de la incineradora</strong>. En dos senzills passos envia un correu al President del Consell Comarcal i a tots els consellers del Govern del Consell 
+            per demanar que doni suport a la moció!
           </p>
           <ol>
             <li>Omple amb el teu nom i cognoms, la teva població (si tens residència o estiueges al berguedà, posa la població a la que estas vinculat)
-              i el teu DNI (<strong>no guardem cap dada</strong>, és el teu dispositiu qui fa tota la feina ;-)</li>
+              i tingues en compte que <strong>no guardem cap dada</strong>, és el teu dispositiu qui fa tota la feina ;-)</li>
             <li>Si vols enviar còpia a algun altre membre del consell, tria'l del desplegable</li>
             <li>Clica a "Generar email" i s'obrirà l'aplicació de correu que tinguis configurada, i podràs enviar el correu 
               (o modificar-lo si ho consideres adient)</li>
@@ -51,6 +51,7 @@
           <input type="text" id="defaultForm-poblacio" class="form-control validate">
           <label data-error="wrong" data-success="right" for="defaultForm-poblacio">Població</label>
         </div>
+        <!--
         <div class="md-form mb-4">
           <i class="fas fa-address-card prefix grey-text"></i>
           <label data-error="wrong" data-success="right" for="defaultForm-membre">Tria a quin altre conseller del govern li vols enviar el correu</label><br/><br/>
@@ -61,11 +62,12 @@
             <option value="llvall@ccbergueda.cat">Lluís Vall (JUNTS – Gironella)</option>
             <option value="agarcia@ccbergueda.cat">Abel Garcia (CANDIDATURA DE PROGRÉS – Berga)</option>
             <option value="aserra@ccbergueda.cat">Anna Maria Serra (JUNTS – L’Espunyola)</option>
-            <option value="jsabata@ccbergueda.cat2">Araceli Esquerra (JUNTS – Puig-reig)</option>
-            <option value="jsabata@ccbergueda.cat2">Vicenç Linares (JUNTS – La Pobla de Lillet)</option>
-            <option value="jsabata@ccbergueda.cat2">Pep Llamas (BAGÀ ENDAVANT – Bagà)</option>
+            <option value="aesquerra@ccbergueda.cat">Araceli Esquerra (JUNTS – Puig-reig)</option>
+            <option value="vlinares@ccbergueda.cat">Vicenç Linares (JUNTS – La Pobla de Lillet)</option>
+            <option value="pllamas@ccbergueda.cat">Pep Llamas (BAGÀ ENDAVANT – Bagà)</option>
           </select>
         </div>
+        -->
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button class="btn btn-default" id="generate">Generar email</button>
@@ -95,7 +97,9 @@
         function generateEmail(){
           var name = $("#defaultForm-nom").val()+"";
           var poblacio = $("#defaultForm-poblacio").val()+"";
-          var membre = $("#defaultForm-membre").val()+"";
+          //var membre = $("#defaultForm-membre").val()+"";
+          var membre = "pcanal@ccbergueda.cat;jsabata@ccbergueda.cat;llvall@ccbergueda.cat;agarcia@ccbergueda.cat;"+
+          "aserra@ccbergueda.cat;aesquerra@ccbergueda.cat;vlinares@ccbergueda.cat;pllamas@ccbergueda.cat"
           if(name) name = encodeURI(name);
           if(poblacio) poblacio = encodeURI(poblacio);
           if(membre) {
@@ -105,8 +109,8 @@
           }
           const mailtoUrl = "mailto:jlara@ccbergueda.cat?"+membre+"subject=Jes%C3%BAs%20Calderer%20no%20pot%20ser%20Conseller"+
           "%20de%20Medi%20Natural"+
-          "&body=Excm.%20Sr.%20Josep%20Lara%2C%0A%0AJo%20"+name+"%2C%20com%20a%20ve%C3%AD%2Fna%20"+
-          "de%20"+poblacio+"%2C%20em%20poso%20en%20contacte%20amb%20vost%C3%A8%20per%20fer-li%20una%20"+
+          "&body=Excm.%20Sr.%20Josep%20Lara%2C%20Excm.%20conselleres%20i%20consellers%2C%0A%0AJo%20"+name+"%2C%20com%20a%20ve%C3%AD%2Fna%20"+
+          "de%20"+poblacio+"%2C%20em%20poso%20en%20contacte%20amb%20vost%C3%A8s%20per%20fer-los%20una%20"+
           "petici%C3%B3%20concreta.%0A%0AFa%20ja%20m%C3%A9s%20d%E2%80%99un%20any%20que%20els%20berguedans"+
           "%20i%20berguedanes%20lluitem%20contra%20la%20implantaci%C3%B3%20d%E2%80%99una%20incineradora%"+
           "20que%20ser%C3%A0%20sens%20dubte%20perjudicial%20social%2C%20econ%C3%B2mica%20i%20ambientalment."+
